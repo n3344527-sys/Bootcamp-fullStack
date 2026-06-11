@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background-color: #f2f2f2;
+    }
+
+    h1{
+      text-align: center;
+      color: teal;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    #calculator{
+      width: 430px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: rgba(0,0,0,0.15) 0px 5px 15px;
+    }
+
+    #input{
+      height: 70px;
+      background-color: white;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: rgba(0,0,0,0.15) 0px 5px 15px;
+    }
+
+    #keyboard{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    #keyboard div{
+      height: 70px;
+      background-color: white;
+      border-radius: 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 28px;
+      font-weight: bold;
+
+      box-shadow: rgba(0,0,0,0.15) 0px 5px 15px;
+      cursor: pointer;
+    }
+
+    .symbol{
+      background-color: black !important;
+      color: white;
+    }
+
+    #clear{
+      background-color: red !important;
+      color: white;
+    }
+
+    #keyboard div:hover{
+      cursor: pointer;
+      background-color: pink;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Welcome to my calculator</h1>
+
+  <div id="calculator">
+
+    <div id="input"></div>
+
+    <div id="keyboard">
+
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="symbol">+</div>
+
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div class="symbol">-</div>
+
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div class="symbol">*</div>
+
+      <div id="clear">C</div>
+      <div>0</div>
+      <div class="symbol">=</div>
+      <div class="symbol">/</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
