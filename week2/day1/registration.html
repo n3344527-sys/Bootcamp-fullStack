@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+		function showName() {
+			const nm = document.getElementById("name");
+            const hd = document.getElementById("dName");
+            hd.innerText = nm.value;
+		}
+
+		function showGender() {
+            const gen = document.getElementById("gender");
+            const hd2 = document.getElementById("dGender");
+            hd2.innerText = gen.value; 
+		}
+
+		function showEmail() {
+            const em = document.getElementById("email");
+            const hd3 = document.getElementById("dEmail").innerText = em.value; 
+
+    }
+
+		function showMobile() {
+            const mb = document.getElementById("mobile");
+            const hd4 = document.getElementById("dMobile").innerText = mb.value; 
+
+		}
+
+		function resetForm() {
+			      const nm = document.getElementById("name").value="";
+            const gen = document.getElementById("gender").value="";
+            const em = document.getElementById("email").value="";
+            const mb = document.getElementById("mobile").value="";
+
+
+		}
+
+		function resetDisplay() {
+            const hd = document.getElementById("dName").innerText= "NAME";
+            const hd2 = document.getElementById("dGender").innerText= "GENDER";
+            const hd3 = document.getElementById("dEmail").innerText= "EMAIL";
+            const hd4 = document.getElementById("dMobile").innerText= "MOBILE";
+
+    }
+	</script>
+</body>
+</html>
