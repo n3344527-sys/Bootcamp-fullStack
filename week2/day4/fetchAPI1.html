@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    const api = "  https://jsonplaceholder.typicode.com/todos/";
+
+    fetch(api)
+    .then((res)=> res.json())        //converts the JSON text into a JavaScript object
+    .then((data)=> console.log(data))
+    .catch((err)=> console.log(err))
+</script>
