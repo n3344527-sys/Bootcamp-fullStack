@@ -1,0 +1,40 @@
+<!-- The user should be able to enter OTP and, when clicking on submit, make a new promise
+ - The promise should be resolved if the entered OTP is "1234"; otherwise, reject it. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+</head>
+<body>
+    <input type="number" id="otpEntered" placeholder="Enter the OTP">
+        <br><br>
+    <input type="submit" id="submit">
+    
+</body>
+</html>
+<script>
+    document.querySelector("#submit").addEventListener("click", otpverify);
+
+    function otpverify(){
+        const otp = document.querySelector("#otpEntered").value;
+        let OTP = (new Promise((resolve,reject)=>{
+            if (otp==1234){ 
+                resolve("OTP is correct")
+            } else{
+                reject("OTP is incorrect")
+            }
+        }));
+
+        OTP.then((result)=>{
+            console.log(result);
+        }).catch((error)=>{
+            console.log(error);
+            
+        })
+        return OTP;
+    }
+
+</script>
