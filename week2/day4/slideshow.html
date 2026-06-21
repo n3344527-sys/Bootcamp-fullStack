@@ -1,0 +1,138 @@
+<!--  Create a slideshow with at least 20 images
+    - There should be a button to stop the slideshow and start the slideshow show
+    - Provide a next and previous button below the slideshow.
+    - On clicking the next or previous button, the automatic slideshow will stop
+    - And it will work as a normal slider -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Slideshow</h1>
+
+    <img id="slider" src="" alt="Slideshow Image">
+
+    <div class="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+        const images = [
+            "https://i.pinimg.com/736x/88/56/b5/8856b5f43f5c9dba60dd5a15178c9297.jpg",
+            "https://i.pinimg.com/736x/c2/fa/c4/c2fac465e4c71e206c3dcc26d23e9214.jpg",
+            "https://i.pinimg.com/736x/29/d2/16/29d216415524a60303de8e30f21dfd3b.jpg",
+            "https://i.pinimg.com/736x/51/37/fc/5137fc963873abbc250ed4e5cb474403.jpg",
+            "https://i.pinimg.com/736x/1e/48/f6/1e48f6ac33561720de5734043ed4a656.jpg",
+            "https://i.pinimg.com/736x/87/ea/08/87ea083950d91f5064c87db0ba9915f6.jpg",
+            "https://i.pinimg.com/736x/24/48/cd/2448cd69f9967ce73fda00e474c71050.jpg",
+            "https://i.pinimg.com/736x/a6/1c/88/a61c8843e2c38953db8826e4365dd148.jpg",
+            "https://i.pinimg.com/736x/28/68/d6/2868d65246f027d3d7118e8cae08f910.jpg",
+            "https://i.pinimg.com/736x/89/63/f0/8963f023c81da4c8af431abf78ce09a2.jpg",
+            "https://i.pinimg.com/1200x/26/b6/56/26b656ab51ababed99437b4d17b2061f.jpg",
+            "https://i.pinimg.com/736x/66/30/62/663062d84013f884322c1e43ae275235.jpg",
+            "https://i.pinimg.com/736x/90/22/c0/9022c0cde4b71fe138a007fc2c164018.jpg",
+            "https://i.pinimg.com/736x/07/d8/36/07d836aba7dad23c42280f103f16bc3c.jpg",
+            "https://i.pinimg.com/1200x/02/e9/99/02e9997c5be40c01566e8dfa46fc7d6f.jpg",
+            "https://i.pinimg.com/736x/cf/c6/32/cfc632fef81df835284eefe2ba9b1556.jpg",
+            "https://i.pinimg.com/736x/10/c4/c3/10c4c380f5080adba787ff384ddbdba5.jpg",
+            "https://i.pinimg.com/1200x/27/84/61/2784612b471cded0d28852ab48a514e5.jpg",
+            "https://i.pinimg.com/1200x/58/b7/9b/58b79b1576b4953c65e7c64c3436779b.jpg",
+            "https://i.pinimg.com/736x/ff/c2/a5/ffc2a54524e47d004e9ec780b3048d52.jpg"
+        ];
+
+        const img = document.getElementById("slider");
+
+        let currentIndex = 0;
+        let slideShow;
+
+        function showImage() {
+            img.src = images[currentIndex];
+        }
+
+        function startSlideShow() {
+            clearInterval(slideShow);
+
+            slideShow = setInterval(() => {
+                currentIndex++;
+
+                if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                }
+
+                showImage();
+            }, 2000);
+        }
+
+        showImage();
+
+        startSlideShow();
+
+        document.getElementById("stop").addEventListener("click", () => {
+            clearInterval(slideShow);
+        });
+
+        document.getElementById("start").addEventListener("click", () => {
+            startSlideShow();
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+            clearInterval(slideShow);
+
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            showImage();
+        });
+
+        document.getElementById("prev").addEventListener("click", () => {
+            clearInterval(slideShow);
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+
+            showImage();
+        });
+    </script>
+
+</body>
+</html>
