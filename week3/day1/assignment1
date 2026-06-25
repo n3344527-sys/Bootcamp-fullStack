@@ -1,1 +1,33 @@
+1. What is React?
+ans : React is a JavaScript library that is used to create fast and interactive UIs
+
+2. Who made React? 
+ans : Jordan Walke 
+
+3. What is Babel?
+ans : Babel is a transpiler that converts JSX and modern JavaScript into vanilla JavaScript
+
+4. How does Babel convert HTML code in React into valid code?
+ans : Babel converts JSX using React.createElement()
+
+5. What is ReactDOM used for? Write an example.
+ans : ReactDOM is a package that provides DOM-specific methods (createRoot() and render()) for React. It is used to render React components into the browser's DOM and update the UI efficiently. Example:- ReactDOM.createRoot().render(<App />) renders the App component inside a DOM element().
+
+6. What packages do you need to import to work with React?
+ans : import React from "react";  -For creating components.
+      import ReactDOM from "react-dom/client";    -For rendering components in the browser
+
+7. How do you add React to a web application?
+ans : npm create vite@latest .  (we use dot if we want to make current folder into react folder)
+      npm install i - if we want to instal dependencies
+
+8. What is React.createElement?
+ans : a function that creates React elements.
+
+9. What are the three properties that createElement accepts?
+ans : React.createElement("tagName",{property/attribute},content);
+
+10. What is the meaning of render and root?
+ans : Render = Displaying the React component on the screen.
+      Root = Place where React app will be shown.
 
